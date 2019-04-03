@@ -79,3 +79,12 @@ SELECT * FROM fire_violations limit 5;
 
 
 
+SELECT Corrective Action, Address, FROM fire_violations WHERE Corrective Action=correct;
+
+
+
+SELECT fire_violations.Corrective Action, contacts.Company Name, permits.Street Number
+FROM ((Orders
+INNER JOIN fire_violations ON Orders.CustomerID = Customers.CustomerID)
+INNER JOIN Shippers ON Orders.ShipperID = Shippers.ShipperID);
+WHERE Corrective Action = correct;
